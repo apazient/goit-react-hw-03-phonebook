@@ -1,6 +1,11 @@
 .form{
     display:flex;
+    width: 50vh;
+    margin: 20px auto ;
+    padding: 50px;
     flex-wrap: wrap;
+    flex-direction: column;
+    outline: 1px solid black;
 }
 
 .label{
