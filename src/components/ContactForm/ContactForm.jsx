@@ -3,7 +3,6 @@ import s from './ContactForm.module.css';
 
 import PropTypes from 'prop-types';
 
-import style from './ContactForm.module.css';
 const INITIAL_STATE = {
   name: '',
   number: '',
@@ -55,6 +54,11 @@ export class ContactForm extends Component {
     );
   }
 }
+ContactForm.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+};
+
 // export const ContactForm = () => {
 //
 // };
@@ -102,7 +106,3 @@ export class ContactForm extends Component {
 //       </form>
 //     );
 //   }
-
-// ContactForm.propTypes = {
-//   value: PropTypes.string,
-// };

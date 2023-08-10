@@ -24,6 +24,17 @@ export const ContactList = ({ users = [], onDeleteUser }) => {
     </ol>
   );
 };
+ContactList.propTypes = {
+  users: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      number: PropTypes.string,
+    })
+  ),
+
+  onDeleteUser: PropTypes.func,
+};
 
 // export const ContactList = ({ user = [] }) => {
 //   //   const filteredContacts = () =>
@@ -70,14 +81,3 @@ export const ContactList = ({ users = [], onDeleteUser }) => {
 //     </ol>
 //   );
 // };
-// //ContactList.propTypes = {
-//   //   contacts: PropTypes.arrayOf(
-//   //     PropTypes.exact({
-//   //       id: PropTypes.string.isRequired,
-//   //       name: PropTypes.string.isRequired,
-//   //       number: PropTypes.string.isRequired,
-//   //     })
-//   //   ),
-//   //   filter: PropTypes.string.isRequired,
-//   //   deleteContact: PropTypes.func.isRequired,
-// //};

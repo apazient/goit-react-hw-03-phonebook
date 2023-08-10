@@ -1,5 +1,6 @@
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import users from '../../assets/users.json';
@@ -11,12 +12,10 @@ export class Contacts extends Component {
   componentDidMount() {
     const users = JSON.parse(window.localStorage.getItem('contacts'));
     users.length && this.setState({ users });
-    console.log('mount');
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.users.length !== this.state.users.length) {
       window.localStorage.setItem('contacts', JSON.stringify(this.state.users));
-      console.log('Update');
     }
   }
   handleSaveUser = user => {
@@ -55,3 +54,7 @@ export class Contacts extends Component {
     );
   }
 }
+
+Contacts.propTypes = {
+  users: PropTypes.array,
+};
